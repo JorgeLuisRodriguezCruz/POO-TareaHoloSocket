@@ -9,6 +9,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /* 
  * @author rodri
@@ -43,6 +44,8 @@ public class Gestor implements ActionListener{
             try {
                 this.salida.writeInt(11);
                 this.salida.flush();
+                String msj = this.entrada.readUTF();
+                JOptionPane.showMessageDialog(null, ""+msj, "Notificacion", JOptionPane.INFORMATION_MESSAGE);
                 
             } catch (IOException ex) { }
         }

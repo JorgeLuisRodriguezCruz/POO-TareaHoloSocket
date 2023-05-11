@@ -29,6 +29,8 @@ public class Comunicador extends Thread {
                 
                 if (num == 11){
                     this.gestor.activar();
+                    this.gestor.getSalida().writeUTF("La etiqueta a cambiado de estado");
+                    this.gestor.getSalida().flush();
                 }
             }catch (IOException ex) {
             }
