@@ -37,12 +37,16 @@ public class Gestor {
             this.cliente = server.accept(); 
             this.salida = new ObjectOutputStream(this.cliente.getOutputStream());
             this.entrada = new ObjectInputStream(this.cliente.getInputStream());
-            System.out.println("UUUH");
+            
             this.comunicador.start();
-            //this.ventana.blink();
+            this.ventana.blink();
         }catch (Exception e){}
     }
 
+    public UIEtiqueta getVentana() {
+        return ventana;
+    }
+    
     public ObjectOutputStream getSalida() {
         return salida;
     }

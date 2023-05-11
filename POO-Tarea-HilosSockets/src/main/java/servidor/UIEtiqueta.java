@@ -35,7 +35,7 @@ public class UIEtiqueta {
         this.panel.setBackground(Color.LIGHT_GRAY);
          
         blinker.setPreferredSize(new Dimension(300, 140));
-        //this.blinker.setBounds(0, 0, 300, 300);
+        
         this.blinker.setOpaque(true);
         this.blinker.setBackground(Color.WHITE);
         
@@ -46,9 +46,9 @@ public class UIEtiqueta {
     }
     
     public void blink(){
-        System.out.println("Empieza a blinkear");
+        
         while(true){
-            
+            System.out.println("Estado activo ---> "+ this.activo);
             if (this.activo){
                 try {
                     this.blinker.setBackground(Color.YELLOW);
