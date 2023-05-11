@@ -25,10 +25,16 @@ public class Comunicador extends Thread {
         
         while (this.corre) {
             try { 
-                System.out.println("Aqui llego");
-                int num = (int)this.gestor.getEntrada().readInt();
-                System.out.println("Este es el num: " + num);
                 
+                System.out.println("Aqui llego");
+                String msj = this.gestor.getEntrada().readUTF();
+                System.out.println("Usa el boton "+ msj);
+                
+                System.out.println("\nSecunda lectura");
+                int num = this.gestor.getEntrada().readInt();
+                System.out.println("Numerico: " + num);
+                num = num +5;
+                System.out.println("Numerico mas 5: " + num);
                 /*if (num == 1)
                     this.gestor.activar();*/
             }catch (IOException ex) {

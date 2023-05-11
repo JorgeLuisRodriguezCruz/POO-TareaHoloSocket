@@ -42,7 +42,11 @@ public class Gestor implements ActionListener{
         if (e.getSource() == this.ventana.getBoton()){
             try {
                 //this.salida.writeInt(1);
-                this.salida.writeChars("Capo");
+                this.salida.writeUTF("Capo");
+                this.salida.flush();
+                this.salida.writeInt(121);
+                this.salida.flush();
+                
             } catch (IOException ex) { }
         }
     }
